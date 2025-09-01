@@ -1,10 +1,11 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // This would typically come from a CMS or database
@@ -40,7 +41,8 @@ const blogPosts = [
 ];
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = blogPosts.find(p => p.slug === params.slug);
+  const { slug } = await params;
+  const post = blogPosts.find(p => p.slug === slug);
   
   if (!post) {
     return {
@@ -61,8 +63,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts.find(p => p.slug === params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = blogPosts.find(p => p.slug === slug);
 
   if (!post) {
     notFound();
@@ -97,23 +100,23 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <p className="text-gray-600 mb-4">
                 Kontaktujte nás pre profesionálnu diagnostiku a opravu vašich autochladičov.
               </p>
-              <a
+              <Link
                 href="/#kontakt"
                 className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Kontaktovať nás
-              </a>
+              </Link>
             </div>
           </div>
         </article>
         
         <div className="mt-8">
-          <a
+          <Link
             href="/blog"
             className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
           >
             ← Späť na blog
-          </a>
+          </Link>
         </div>
       </div>
     </div>
