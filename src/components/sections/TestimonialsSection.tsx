@@ -36,7 +36,7 @@ export default function TestimonialsSection({ className = '' }: TestimonialsSect
 
               {/* Content */}
               <blockquote className="text-gray-300 mb-6 italic leading-relaxed">
-                "{testimonial.content}"
+                &ldquo;{testimonial.content}&rdquo;
               </blockquote>
 
               {/* Author */}
