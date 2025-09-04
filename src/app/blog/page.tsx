@@ -17,8 +17,8 @@ interface Article {
 
 // Databáza článkov - rovnaká ako v [slug]/page.tsx
 const articles: Record<string, Article> = {
-  'oprava-autochladicov-bratislava': {
-    slug: 'oprava-autochladicov-bratislava',
+  'oprava-autochladicov': {
+    slug: 'oprava-autochladicov',
     title: 'Oprava autochladičov Bratislava - Profesionálny servis',
     excerpt: 'Kompletný servis chladiacich systémov, oprava poškodených chladičov, výmena chladiacej kvapaliny a tlakové testovanie v Bratislave.',
     content: '',
@@ -27,8 +27,8 @@ const articles: Record<string, Article> = {
     date: '2024-01-15',
     image: '/hero-mechanic.jpg'
   },
-  'spajkovanie-hlinika-bratislava': {
-    slug: 'spajkovanie-hlinika-bratislava',
+  'zvarenie-hlinika-bratislava': {
+    slug: 'zvarenie-hlinika-bratislava',
     title: 'Spájkovanie hliníka Bratislava - Moderné technológie',
     excerpt: 'Profesionálne spájkovanie hliníka a spájkovanie hliníka v Bratislave, oprava motoreových blokov a iných hliníkových častí s certifikovanými postupmi a kvalitnými pájkami.',
     content: '',
@@ -37,15 +37,25 @@ const articles: Record<string, Article> = {
     date: '2024-01-10',
     image: '/chladic.png'
   },
-  'diagnostika-autochladicov-bratislava': {
-    slug: 'diagnostika-autochladicov-bratislava',
-    title: 'Preplachovanie chladičov - Moderné zariadenia',
+  'diagnostika-autochladicov': {
+    slug: 'diagnostika-autochladicov',
+    title: 'Diagnostika autochladičov Bratislava - Moderné zariadenia',
     excerpt: 'Komplexná diagnostika a preplachovanie problémov s chladením autochladičov a preventívne prehliadky systémov s detailným reportom v Bratislave. Používame najnovšie diagnostické zariadenia.',
     content: '',
-    category: 'Preplachovanie chladičov',
+    category: 'Diagnostika autochladičov',
     readTime: '4 min',
     date: '2024-01-01',
     image: '/clean-chladic.png'
+  },
+  'vyroba-hlinikovych-dielov': {
+    slug: 'vyroba-hlinikovych-dielov',
+    title: 'Výroba hliníkových dielov Bratislava - Na mieru',
+    excerpt: 'Vlastná výroba hliníkových náhradných dielov a komponentov na mieru v Bratislave s presnosťou na milimeter a 15+ rokmi skúseností.',
+    content: '',
+    category: 'Výroba hliníkových dielov',
+    readTime: '6 min',
+    date: '2024-01-05',
+    image: '/chladic.png'
   }
 };
 
